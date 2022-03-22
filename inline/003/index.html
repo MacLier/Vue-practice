@@ -20,8 +20,12 @@
     <button v-on:click="increaseCounter(10)">Add 10</button>
     <button v-on:click="decreaseCounter(5)">Remove 5</button> <!-- !!! -->
     <p>Result: {{ counter }}</p>
-    <input type="text" v-on:input="setName($event,'Doe')">
-    <p>Your Name: {{ name }}</p>
+    <input type="text" v-on:input="setName($event,'Doe')" v-on:keyup.enter="confirmInput">
+    <p>Your Name: {{ confirmedName }}</p>
+    <form action="" v-on:submit.prevent="submitForm">
+      <input type="text">
+      <button>Sign up</button>
+    </form>
   </section>
 </body>
 
