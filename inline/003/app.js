@@ -16,7 +16,7 @@ const app = Vue.createApp({
     },
 
     setName(event, lastname) {
-      this.name = event.target.value + ' ' + lastname;
+      this.name = event.target.value;
     },
 
     increaseCounter(num) {
@@ -24,6 +24,9 @@ const app = Vue.createApp({
     },
     decreaseCounter(num) {
       this.counter -= num;
+    },
+    resetNameInput() {
+      this.name = '';
     },
   }
 });
