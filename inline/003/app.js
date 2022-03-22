@@ -2,14 +2,19 @@ const app = Vue.createApp({
   data() {
     return {
       counter: 0,
+      name: "John Doe",
     };
   },
   methods: {
-    increaseCounter() {
-      this.counter++;
+    setName(event, lastname) {
+      this.name = event.target.value + ' ' + lastname;
     },
-    decreaseCounter() {
-      this.counter--;
+
+    increaseCounter(num) {
+      this.counter += num;
+    },
+    decreaseCounter(num) {
+      this.counter -= num;
     },
   }
 });
