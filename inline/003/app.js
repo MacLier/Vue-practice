@@ -26,7 +26,7 @@ const app = Vue.createApp({
 	},
 	computed: {
 		fullname() {
-			if (this.name === '' || this.lastName === '') {
+			if (this.name == '' || this.lastName == '') {
 				return '';
 			} else {
 				return this.name + ' ' + this.lastName;
