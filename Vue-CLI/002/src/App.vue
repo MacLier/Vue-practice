@@ -3,9 +3,16 @@
     <h1>My Friends</h1>
   </header>
   <ul>
-    <friend-contact></friend-contact>
-    <friend-contact></friend-contact>
-    <friend-contact></friend-contact>
+    <friend-contact
+      name="Aladin Lopez"
+      phone-number="012345678991"
+      email-adress="aliezdont@lop.com"
+    ></friend-contact>
+    <friend-contact
+      name="Pali Nemlopez"
+      phone-number="01234562222"
+      email-adress="howeverpali@dontlopez.com"
+    ></friend-contact>
   </ul>
 </template>
 
