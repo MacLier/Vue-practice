@@ -4,16 +4,12 @@
   </header>
   <ul>
     <friend-contact
-      name="Aladin Lopez"
-      phone-number="012345678991"
-      email-adress="aliezdont@lop.com"
-      is-favorit="1"
-    ></friend-contact>
-    <friend-contact
-      name="Pali Nemlopez"
-      phone-number="01234562222"
-      email-adress="howeverpali@dontlopez.com"
-      is-favorit="0"
+      v-for="friend in friends"
+      :key="friend.id"
+      :name="friend.name"
+      :phone-number="friend.phone"
+      :email-adress="friend.email"
+      :is-favorit="true"
     ></friend-contact>
   </ul>
 </template>
