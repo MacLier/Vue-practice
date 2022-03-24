@@ -41,6 +41,17 @@ export default {
       //   },
     },
   },
+    emits: ["toggle-favorite"], // default
+//   emits: {  // define to validate events
+//     "toggle-favorite": function (id) {
+//       if (id) {
+//         return true;
+//       } else {
+//         console.log("Id is missing!");
+//         return false;
+//       }
+//     },
+  },
   data() {
     return {
       detailsAreVisible: false,
