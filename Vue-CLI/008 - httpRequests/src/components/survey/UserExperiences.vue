@@ -46,8 +46,12 @@ export default {
         'https://vue-http-demo-cd926-default-rtdb.europe-west1.firebasedatabase.app/surveys.json'
       )
         .then((request) => {
-          this.isLoading = false;
-          return request.json();
+          if (request.ok) {
+            this.isLoading = false;
+            return request.json();
+          } else {
+            throw new Error('Couldnot save Data!');
+          }
         })
         .then((data) => {
           const results = [];
@@ -62,8 +66,7 @@ export default {
         })
         .catch((err) => {
           this.isLoading = false;
-          console.log(err);
-          this.error = 'Failed to fetch data - please try again later.';
+          this.error = err.message;
         });
     },
   },
