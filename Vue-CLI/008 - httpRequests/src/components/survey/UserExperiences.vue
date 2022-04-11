@@ -8,7 +8,10 @@
         >
       </div>
       <p v-if="isLoading">Loading...</p>
-      <ul v-else>
+      <p v-else-if="!isLoading && (!results || results.length === 0)">
+        No stored experiences found. Start adding some survey result first.
+      </p>
+      <ul v-else-if="!isLoading && results && results.length > 0">
         <survey-result
           v-for="result in results"
           :key="result.id"
@@ -44,15 +47,15 @@ export default {
           return request.json();
         })
         .then((data) => {
-          const result = [];
+          const results = [];
           for (let id in data) {
-            result.push({
+            results.push({
               id: id,
               name: data[id].name,
               rating: data[id].rating,
             });
           }
-          this.results = result;
+          this.results = results;
         })
         .catch((err) => console.log(err));
     },
